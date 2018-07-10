@@ -1,0 +1,11 @@
+2018-07-10 11:39:00
+        
+        #include <iostream>
+        #include <iomanip>
+        #include <ctime>
+        int main() {
+            auto t = std::time(nullptr);
+            auto tm = *std::localtime(&t);
+            std::cout << std::put_time(&tm, "%Y-%m-%d %H:%M:%S") << std::endl;
+            return 0;
+        }
