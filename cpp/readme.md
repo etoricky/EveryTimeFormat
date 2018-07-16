@@ -1,4 +1,4 @@
-2018-07-10 11:39:00
+Time now to std::string 2018-07-10 11:39:00
         
         #include <iostream>
         #include <iomanip>
@@ -9,3 +9,18 @@
             std::cout << std::put_time(&tm, "%Y-%m-%d %H:%M:%S") << std::endl;
             return 0;
         }
+
+
+std::string 1970-01-01 00:00:00 to std::time_t
+
+    #include <iostream>
+    #include <sstream>
+    #include <iomanip>
+    int main() {
+      struct std::tm tm;
+      std::istringstream ss("1970-01-01 00:00:00");
+      ss >> std::get_time(&tm, "%Y-%m-%d %H:%M:%S");
+      std::time_t time = mktime(&tm);
+      std::cout << time;
+      return 0;
+    }
